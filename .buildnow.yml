@@ -1,0 +1,16 @@
+name: kitr-build
+
+steps:
+  - name: run chromium browser tests
+    run: pnpm run test:wtr
+
+  - name: run general tests
+    run: pnpm run test
+
+  - name: build library
+    run: pnpm run build
+
+artifacts:
+  - name: kitr-dist
+    paths:
+      - "dist/**/*"
