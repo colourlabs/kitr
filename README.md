@@ -142,7 +142,7 @@ class MyCounter extends LitElement {
 customElements.define("my-counter", MyCounter);
 ```
 
-the controller subscribes when the component connects and unsubscribes when it disconnects — no manual cleanup needed.
+the controller subscribes when the component connects and unsubscribes when it disconnects, no manual cleanup needed.
 
 ---
 
@@ -174,7 +174,7 @@ export class CounterService extends KitrService {
 }
 ```
 
-`updateState` runs your updater and schedules a batched notification in the next microtask — multiple state changes in the same execution cycle result in a single re-render.
+`updateState` runs your updater and schedules a batched notification in the next microtask, multiple state changes in the same execution cycle result in a single re-render.
 
 ### `KitrService` API
 
@@ -211,7 +211,7 @@ import { CounterService } from "./counter.service";
 
 kitr.provide("app.counter", new CounterService());
 
-// lazy — only loaded when first requested
+// lazy - only loaded when first requested
 kitr.provideLazy("app.db", () => import("./db.service").then((m) => new m.DbService()));
 ```
 
